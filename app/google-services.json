@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "580597756491",
+    "project_id": "todo-df758",
+    "storage_bucket": "todo-df758.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580597756491:android:064800181c6bba829f13ce",
+        "android_client_info": {
+          "package_name": "tn.esprit.todo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbeyGt4fan5m5F3O3Uq7e1U-pZbiJ6f20"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
