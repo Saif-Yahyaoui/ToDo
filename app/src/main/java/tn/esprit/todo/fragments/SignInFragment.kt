@@ -48,6 +48,8 @@ class SignInFragment : Fragment() {
             val pass = binding.passEt.text.toString().trim()
             if (email.isNotEmpty() && pass.isNotEmpty()){
 
+                binding.progressBar.visibility = View.VISIBLE
+
                     auth.signInWithEmailAndPassword(email , pass).addOnCompleteListener {
                         if (it.isSuccessful) {
                             Toast.makeText(context, "Login Successfully", Toast.LENGTH_SHORT)
@@ -57,8 +59,13 @@ class SignInFragment : Fragment() {
                             Toast.makeText(context, it.exception?.message, Toast.LENGTH_SHORT)
                                 .show()
                         }
+                        binding.progressBar.visibility = View.GONE
+
                     }
-                }
+                }else{
+                Toast.makeText(context, "Empty field is not allowed", Toast.LENGTH_SHORT)
+                    .show()
+            }
             }
         }
     }

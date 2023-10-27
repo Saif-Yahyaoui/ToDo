@@ -46,6 +46,8 @@ class SignUpFragment : Fragment() {
             val verifyPass = binding.verifyPassEt.text.toString().trim()
             if (email.isNotEmpty() && pass.isNotEmpty() && verifyPass.isNotEmpty()){
                 if (pass == verifyPass){
+                    binding.progressBar2.visibility = View.VISIBLE
+
                     auth.createUserWithEmailAndPassword(email , pass).addOnCompleteListener {
                         if (it.isSuccessful) {
                             Toast.makeText(context, "Registred Successfully", Toast.LENGTH_SHORT)
@@ -56,7 +58,15 @@ class SignUpFragment : Fragment() {
                                 .show()
                         }
                     }
+                }else{
+                    Toast.makeText(context, "Password must match", Toast.LENGTH_SHORT)
+                        .show()
                 }
+                binding.progressBar2.visibility = View.GONE
+
+            }else{
+                Toast.makeText(context, "Empty field is not allowed", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
     }
