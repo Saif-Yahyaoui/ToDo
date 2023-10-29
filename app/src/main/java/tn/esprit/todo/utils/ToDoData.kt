@@ -1,3 +1,3 @@
 package tn.esprit.todo.utils
 
-data class ToDoData(val taskId:String , val task : String)
+data class ToDoData(val taskId:String , var task : String)
